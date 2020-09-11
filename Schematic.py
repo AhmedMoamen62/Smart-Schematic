@@ -40,42 +40,42 @@ class Window(QWidget):
         self.setTransistorsLabels()
 
         # add default components label for the schematic
-        self.setFixedLabels()
+        self.setVoltageLabels()
 
     # add all transistors label at the start above the schematic
     def setTransistorsLabels(self):
         # set default font for all transistors label
-        font = QFont("SansSerif",13,italic=True)
+        font = QFont("SansSerif",14,italic=True)
 
         # set all transistors label
         self.trans1a = QLabel(self.label)
         self.trans1a.setText("M1a")
-        self.trans1a.move(282,245)
+        self.trans1a.move(282,243)
         self.trans1a.setFont(font)
 
         self.trans2a = QLabel(self.label)
         self.trans2a.setText("M2a")
-        self.trans2a.move(80,368)
+        self.trans2a.move(77,368)
         self.trans2a.setFont(font)
 
         self.trans3a = QLabel(self.label)
         self.trans3a.setText("M3a")
-        self.trans3a.move(80,288)
+        self.trans3a.move(77,288)
         self.trans3a.setFont(font)
 
         self.trans4a = QLabel(self.label)
         self.trans4a.setText("M4a")
-        self.trans4a.move(80,178)
+        self.trans4a.move(77,178)
         self.trans4a.setFont(font)
 
         self.trans5a = QLabel(self.label)
         self.trans5a.setText("M5a")
-        self.trans5a.move(80,110)
+        self.trans5a.move(77,110)
         self.trans5a.setFont(font)
 
         self.trans1b = QLabel(self.label)
         self.trans1b.setText("M1b")
-        self.trans1b.move(342, 245)
+        self.trans1b.move(337, 243)
         self.trans1b.setFont(font)
 
         self.trans2b = QLabel(self.label)
@@ -98,6 +98,11 @@ class Window(QWidget):
         self.trans5b.move(545, 110)
         self.trans5b.setFont(font)
 
+        self.trans6 = QLabel(self.label)
+        self.trans6.setText("M6")
+        self.trans6.move(337, 150)
+        self.trans6.setFont(font)
+
         self.colorDefaultLabels()
 
     # color all transistors with blue
@@ -114,41 +119,161 @@ class Window(QWidget):
         self.trans4b.setStyleSheet("color: blue")
         self.trans5b.setStyleSheet("color: blue")
 
-    def setFixedLabels(self):
+        self.trans6.setStyleSheet("color: blue")
+
+    def setVoltageLabels(self):
         # set default fonts for all components label
-        font1 = QFont("SansSerif", 13, italic=True)
-        font2 = QFont("SansSerif", 10, italic=True)
-        font3 = QFont("SansSerif", 8, italic=True)
+        font1 = QFont("SansSerif", 14, italic=True)
+        font2 = QFont("SansSerif", 11, italic=True)
 
         label1 = QLabel(self.label)
-        label1.setText("Vcascn")
-        label1.move(185, 300)
+        label1.setText("V")
+        label1.move(182, 290)
         label1.setFont(font1)
+        label1.setStyleSheet("color: blue")
 
         label2 = QLabel(self.label)
-        label2.setText("Vin+")
-        label2.move(185, 255)
-        label2.setFont(font1)
+        label2.setText("cascn")
+        label2.move(195, 297)
+        label2.setFont(font2)
+        label2.setStyleSheet("color: blue")
 
         label3 = QLabel(self.label)
-        label3.setText("Vout-")
-        label3.move(41, 245)
+        label3.setText("V")
+        label3.move(182, 245)
         label3.setFont(font1)
+        label3.setStyleSheet("color: blue")
 
         label4 = QLabel(self.label)
-        label4.setText("Vcascp")
-        label4.move(185, 183)
-        label4.setFont(font1)
+        label4.setText("in+")
+        label4.move(195, 253)
+        label4.setFont(font2)
+        label4.setStyleSheet("color: blue")
 
         label5 = QLabel(self.label)
-        label5.setText("Vcmfp")
-        label5.move(226, 103)
+        label5.setText("V")
+        label5.move(35, 232)
         label5.setFont(font1)
+        label5.setStyleSheet("color: blue")
 
         label6 = QLabel(self.label)
-        label6.setText("Vbiasp")
-        label6.move(226, 103)
-        label6.setFont(font1)
+        label6.setText("out-")
+        label6.move(48, 240)
+        label6.setFont(font2)
+        label6.setStyleSheet("color: blue")
+
+        label7 = QLabel(self.label)
+        label7.setText("V")
+        label7.move(182, 175)
+        label7.setFont(font1)
+        label7.setStyleSheet("color: blue")
+
+        label8 = QLabel(self.label)
+        label8.setText("cascp")
+        label8.move(195, 183)
+        label8.setFont(font2)
+        label8.setStyleSheet("color: blue")
+
+        label9 = QLabel(self.label)
+        label9.setText("V")
+        label9.move(220, 150)
+        label9.setFont(font1)
+        label9.setStyleSheet("color: blue")
+
+        label10 = QLabel(self.label)
+        label10.setText("cmfp")
+        label10.move(233, 158)
+        label10.setFont(font2)
+        label10.setStyleSheet("color: blue")
+
+        label11 = QLabel(self.label)
+        label11.setText("V")
+        label11.move(215, 90)
+        label11.setFont(font1)
+        label11.setStyleSheet("color: blue")
+
+        label12 = QLabel(self.label)
+        label12.setText("biasp")
+        label12.move(228, 98)
+        label12.setFont(font2)
+        label12.setStyleSheet("color: blue")
+
+        label13 = QLabel(self.label)
+        label13.setText("V")
+        label13.move(420, 290)
+        label13.setFont(font1)
+        label13.setStyleSheet("color: blue")
+
+        label14 = QLabel(self.label)
+        label14.setText("cascn")
+        label14.move(433, 297)
+        label14.setFont(font2)
+        label14.setStyleSheet("color: blue")
+
+        label15 = QLabel(self.label)
+        label15.setText("V")
+        label15.move(441, 245)
+        label15.setFont(font1)
+        label15.setStyleSheet("color: blue")
+
+        label16 = QLabel(self.label)
+        label16.setText("in-")
+        label16.move(454, 253)
+        label16.setFont(font2)
+        label16.setStyleSheet("color: blue")
+
+        label17 = QLabel(self.label)
+        label17.setText("V")
+        label17.move(420, 175)
+        label17.setFont(font1)
+        label17.setStyleSheet("color: blue")
+
+        label18 = QLabel(self.label)
+        label18.setText("cascp")
+        label18.move(433, 183)
+        label18.setFont(font2)
+        label18.setStyleSheet("color: blue")
+
+        label19 = QLabel(self.label)
+        label19.setText("V")
+        label19.move(577, 232)
+        label19.setFont(font1)
+        label19.setStyleSheet("color: blue")
+
+        label20 = QLabel(self.label)
+        label20.setText("out+")
+        label20.move(590, 240)
+        label20.setFont(font2)
+        label20.setStyleSheet("color: blue")
+
+        label21 = QLabel(self.label)
+        label21.setText("V")
+        label21.move(310, 320)
+        label21.setFont(font1)
+        label21.setStyleSheet("color: blue")
+
+        label22 = QLabel(self.label)
+        label22.setText("biasn")
+        label22.move(323, 327)
+        label22.setFont(font2)
+        label22.setStyleSheet("color: blue")
+
+        label23 = QLabel(self.label)
+        label23.setText("V")
+        label23.move(310, 37)
+        label23.setFont(font1)
+        label23.setStyleSheet("color: blue")
+
+        label24 = QLabel(self.label)
+        label24.setText("DD")
+        label24.move(323, 45)
+        label24.setFont(font2)
+        label24.setStyleSheet("color: blue")
+
+    def setCurrentLabels(self):
+        # set default fonts for all components label
+        font1 = QFont("SansSerif", 11, italic=True)
+        font2 = QFont("SansSerif", 8, italic=True)
 
     # set icon for the application
     def setIcon(self):
