@@ -41,6 +41,7 @@ class Window(QWidget):
 
         # add default components label for the schematic
         self.setVoltageLabels()
+        self.setCurrentLabels()
 
     # add all transistors label at the start above the schematic
     def setTransistorsLabels(self):
@@ -273,7 +274,67 @@ class Window(QWidget):
     def setCurrentLabels(self):
         # set default fonts for all components label
         font1 = QFont("SansSerif", 11, italic=True)
-        font2 = QFont("SansSerif", 8, italic=True)
+        font2 = QFont("SansSerif", 9, italic=True)
+
+        label1 = QLabel(self.label)
+        label1.setText("I")
+        label1.move(235, 207)
+        label1.setFont(font1)
+        label1.setStyleSheet("color: blue")
+
+        label2 = QLabel(self.label)
+        label2.setText("bias")
+        label2.move(240, 215)
+        label2.setFont(font2)
+        label2.setStyleSheet("color: blue")
+
+        label3 = QLabel(self.label)
+        label3.setText("I")
+        label3.move(392, 207)
+        label3.setFont(font1)
+        label3.setStyleSheet("color: blue")
+
+        label4 = QLabel(self.label)
+        label4.setText("bias")
+        label4.move(397, 215)
+        label4.setFont(font2)
+        label4.setStyleSheet("color: blue")
+
+        label5 = QLabel(self.label)
+        label5.setText("I")
+        label5.move(77, 77)
+        label5.setFont(font1)
+        label5.setStyleSheet("color: blue")
+
+        label6 = QLabel(self.label)
+        label6.setText("bias")
+        label6.move(82, 85)
+        label6.setFont(font2)
+        label6.setStyleSheet("color: blue")
+
+        label7 = QLabel(self.label)
+        label7.setText("2I")
+        label7.move(340, 77)
+        label7.setFont(font1)
+        label7.setStyleSheet("color: blue")
+
+        label8 = QLabel(self.label)
+        label8.setText("bias")
+        label8.move(355, 85)
+        label8.setFont(font2)
+        label8.setStyleSheet("color: blue")
+
+        label9 = QLabel(self.label)
+        label9.setText("I")
+        label9.move(552, 77)
+        label9.setFont(font1)
+        label9.setStyleSheet("color: blue")
+
+        label10 = QLabel(self.label)
+        label10.setText("bias")
+        label10.move(557, 85)
+        label10.setFont(font2)
+        label10.setStyleSheet("color: blue")
 
     # set icon for the application
     def setIcon(self):
