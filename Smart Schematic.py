@@ -349,8 +349,89 @@ class Window(QWidget):
         self.move(qRect.topLeft())
 
     def mousePressEvent(self, event:QMouseEvent):
-        print(event.x(),event.y())
         self.colorDefaultLabels()
+        self.redClickedTransistor(event.x(),event.y())
+
+    # red the transistor if the mouse position within its range
+    def redClickedTransistor(self,x,y):
+        x1_a1 = 230
+        y1_a1 = 280
+        x2_a1 = 290
+        y2_a1 = 230
+
+        x1_b1 = 365
+        y1_b1 = 280
+        x2_b1 = 425
+        y2_b1 = 230
+
+        x1_a2 = 100
+        y1_a2 = 400
+        x2_a2 = 170
+        y2_a2 = 350
+
+        x1_b2 = 490
+        y1_b2 = 400
+        x2_b2 = 555
+        y2_b2 = 350
+
+        x1_a3 = 100
+        y1_a3 = 320
+        x2_a3 = 170
+        y2_a3 = 265
+
+        x1_b3 = 490
+        y1_b3 = 320
+        x2_b3 = 555
+        y2_b3 = 265
+
+        x1_a4 = 100
+        y1_a4 = 210
+        x2_a4 = 170
+        y2_a4 = 160
+
+        x1_b4 = 490
+        y1_b4 = 210
+        x2_b4 = 555
+        y2_b4 = 160
+
+        x1_a5 = 100
+        y1_a5 = 145
+        x2_a5 = 170
+        y2_a5 = 95
+
+        x1_b5 = 490
+        y1_b5 = 145
+        x2_b5 = 555
+        y2_b5 = 95
+
+        x1_6 = 280
+        y1_6 = 180
+        x2_6 = 345
+        y2_6 = 140
+
+        if self.withinRange(x,y,x1_a1,y1_a1,x2_a1,y2_a1) or self.withinRange(x,y,x1_b1,y1_b1,x2_b1,y2_b1):
+            self.trans1a.setStyleSheet("color: red")
+            self.trans1b.setStyleSheet("color: red")
+        elif self.withinRange(x,y,x1_a2,y1_a2,x2_a2,y2_a2) or self.withinRange(x,y,x1_b2,y1_b2,x2_b2,y2_b2):
+            self.trans2a.setStyleSheet("color: red")
+            self.trans2b.setStyleSheet("color: red")
+        elif self.withinRange(x,y,x1_a3,y1_a3,x2_a3,y2_a3) or self.withinRange(x,y,x1_b3,y1_b3,x2_b3,y2_b3):
+            self.trans3a.setStyleSheet("color: red")
+            self.trans3b.setStyleSheet("color: red")
+        elif self.withinRange(x,y,x1_a4,y1_a4,x2_a4,y2_a4) or self.withinRange(x,y,x1_b4,y1_b4,x2_b4,y2_b4):
+            self.trans4a.setStyleSheet("color: red")
+            self.trans4b.setStyleSheet("color: red")
+        elif self.withinRange(x,y,x1_a5,y1_a5,x2_a5,y2_a5) or self.withinRange(x,y,x1_b5,y1_b5,x2_b5,y2_b5):
+            self.trans5a.setStyleSheet("color: red")
+            self.trans5b.setStyleSheet("color: red")
+        elif self.withinRange(x,y,x1_6,y1_6,x2_6,y2_6):
+            self.trans6.setStyleSheet("color: red")
+
+    def withinRange(self,x,y,x1,y1,x2,y2):
+        if x >= x1 and x <= x2 and y <= y1 and y >= y2:
+            return True
+        else:
+            return False
 
 # run the application and show the window
 app = QApplication(sys.argv)
